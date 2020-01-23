@@ -45,7 +45,7 @@ class App extends Component {
       <div className="App">
         <div className="container mt-4">
           <h1>Iron Contacts</h1>
-          <div className="col d-flex justify-content-around mt-4 mb-4">
+          <div className="col d-flex justify-content-around mt-4 mb-4 container-btns">
             <a className="btn btn-danger" onClick={() => this.addRandom(this)}>Add Random Contact</a>
             <button className="btn btn-danger" onClick={() => this.sortListByName(this)}>Sort by Name</button>
             <button className="btn btn-danger" onClick={() => this.sortListByPopularity(this)}>Sort by Popularity</button>
