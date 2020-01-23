@@ -1,18 +1,69 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import TableRow from './TableRow'
 import './App.css';
+import data from './contacts.json'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      list: this.getFive()
+    }
+  }
+
+  getFive() {
+    let result = data.splice(0, 6);
+    return result
+  }
+
+  addRandom() {
+    const newList = [...this.state.list];
+    const randomIdx = Math.floor(Math.random() * (data.length - newList.length) + newList.length);
+    newList.push(data[randomIdx]);
+    this.setState({ list: newList });
+  }
+
+  sortListByName() {
+    const sortedList = [...this.state.list];
+    sortedList.sort((a, b) => a.name.localeCompare(b.name));
+    this.setState({ list: sortedList });
+  }
+
+  sortListByPopularity() {
+    const sortedList = [...this.state.list];
+    sortedList.sort((a, b) => b.popularity - a.popularity);
+    this.setState({ list: sortedList });
+  }
+  deleteRow(idx) {
+    const newList = [...this.state.list];
+    newList.splice(idx, 1);
+    this.setState({ list: newList });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="container">
+          <div className="col d-flex justify-content-around mt-4 mb-4">
+            <button className="btn btn-primary" onClick={() => this.addRandom(this)}>Add Random Contact</button>
+            <button className="btn btn-primary" onClick={() => this.sortListByName(this)}>Sort by Name</button>
+            <button className="btn btn-primary" onClick={() => this.sortListByPopularity(this)}>Sort by Popularity</button>
+          </div>
+          <div className="row">
+            <div className="col d-flex flex-row flex-wrap justify-content-between">
+              {this.state.list.map((el, idx) => (
+                <TableRow
+                  key={idx}
+                  pictureUrl={el.pictureUrl}
+                  name={el.name}
+                  popularity={el.popularity}
+                  deleteRow={() => this.deleteRow(idx)}
+                />
+              ))}
+
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
