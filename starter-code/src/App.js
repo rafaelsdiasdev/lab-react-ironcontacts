@@ -43,7 +43,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="container">
+        <div className="container mt-4">
+          <h1>Iron Contacts</h1>
           <div className="col d-flex justify-content-around mt-4 mb-4">
             <a className="btn btn-danger" onClick={() => this.addRandom(this)}>Add Random Contact</a>
             <button className="btn btn-danger" onClick={() => this.sortListByName(this)}>Sort by Name</button>

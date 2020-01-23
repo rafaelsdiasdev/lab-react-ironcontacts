@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './TableRow.css';
 
-
 class TableRow extends Component {
   constructor(props) {
     super(props);
@@ -22,10 +21,3 @@ class TableRow extends Component {
 }
 
 export default TableRow;
-
-// {/* <div className="row">
-// <img src={pictureUrl} alt="" />
-// <h2>{name}</h2>
-// <h3>{Math.round(popularity * 100) / 100}</h3>
-// <button onClick={deleteRow}>Detele</button>{" "}
-// </div> */}
