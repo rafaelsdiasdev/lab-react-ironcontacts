@@ -51,7 +51,7 @@ class App extends Component {
             <button className="btn btn-danger" onClick={() => this.sortListByPopularity(this)}>Sort by Popularity</button>
           </div>
           <div className="row">
-            <div className="col d-flex flex-row flex-wrap justify-content-between">
+            <div className="col d-flex flex-row flex-wrap justify-content-between container-cards">
               {this.state.list.map((el, idx) => (
                 <TableRow
                   key={idx}
