@@ -45,9 +45,9 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="col d-flex justify-content-around mt-4 mb-4">
-            <button className="btn btn-primary" onClick={() => this.addRandom(this)}>Add Random Contact</button>
-            <button className="btn btn-primary" onClick={() => this.sortListByName(this)}>Sort by Name</button>
-            <button className="btn btn-primary" onClick={() => this.sortListByPopularity(this)}>Sort by Popularity</button>
+            <a className="btn btn-danger" onClick={() => this.addRandom(this)}>Add Random Contact</a>
+            <button className="btn btn-danger" onClick={() => this.sortListByName(this)}>Sort by Name</button>
+            <button className="btn btn-danger" onClick={() => this.sortListByPopularity(this)}>Sort by Popularity</button>
           </div>
           <div className="row">
             <div className="col d-flex flex-row flex-wrap justify-content-between">

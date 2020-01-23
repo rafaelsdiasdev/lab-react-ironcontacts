@@ -14,7 +14,7 @@ class TableRow extends Component {
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">Popularity: {Math.round(popularity * 100) / 100}</p>
-          <a href="#" className="btn btn-primary" onClick={deleteRow} >Delete</a>
+          <a className="btn btn-secondary" onClick={deleteRow} >Delete</a>
         </div>
       </div>
     );
